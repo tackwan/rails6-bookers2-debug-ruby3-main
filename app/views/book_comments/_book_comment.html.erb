@@ -1,0 +1,12 @@
+<table class="table">
+<% book.book_comments.each do |book_comment| %>
+  <tr>
+    <td>
+      <%= image_tag book.user.get_profile_image, size:"50x50" %></br>
+      <%= book.user.name %>
+    </td>
+    <td><%= book_comment.comment %></td>
+    <td><%= link_to "Destroy", book_book_comment_path(book), method: :delete, remote: true, class:"btn btn-sm btn-danger" %></td>
+  </tr>
+<% end %>
+</table>
